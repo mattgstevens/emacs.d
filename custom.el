@@ -13,7 +13,8 @@
 
 ;; mac settings
 (when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
+  (exec-path-from-shell-initialize)
+  (tool-bar-mode -1))
 
 ;; Autosave and backups go elsewhere
 (setq backup-directory-alist
