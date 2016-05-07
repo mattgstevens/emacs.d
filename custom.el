@@ -22,16 +22,6 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
-
-;; Projectile
-(projectile-global-mode)
-
-;; Eshell, I love you
-(defun eshell-throwaway () (interactive)
-       (eshell (cdr (cdr (cdr (current-time))))))
-(global-set-key (kbd "C-x m") 'eshell)
-(global-set-key (kbd "C-x M-m") 'eshell-throwaway)
-
 ;; Load all package and mode configs
 (mapcar 'load-file (split-string
 		    (shell-command-to-string
