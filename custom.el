@@ -1,3 +1,7 @@
+;;make script that quits emacs when errors are thrown
+;; condition-case
+;; instead, use error as the catch-all condition name.
+
 ;; Melpa
 (require 'package)
 (add-to-list 'package-archives
@@ -41,3 +45,9 @@
 
 ;; Delete trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Better scrolling
+(setq-default scroll-margin 1
+	      scroll-conservatively 0
+	      scroll-up-aggressively 0.01
+	      scroll-down-aggressively 0.01)

@@ -5,7 +5,8 @@
 	  (lambda () (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)))
 
 (defun save-file-and-eval-it-all () (interactive)
-       (save-buffer))
+       (save-buffer)
+       (eval-buffer nil t))
 
 (add-hook 'emacs-lisp-mode-hook
 	  (lambda () (define-key emacs-lisp-mode-map (kbd "C-c C-k") 'save-file-and-eval-it-all)))
