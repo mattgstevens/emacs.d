@@ -15,9 +15,12 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
-;; no backups everywhere
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
-(setq backup-by-copying t)
+;; Autosave and backups go elsewhere
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 
 ;; Projectile
 (projectile-global-mode)
@@ -28,12 +31,22 @@
 (global-set-key (kbd "C-x m") 'eshell)
 (global-set-key (kbd "C-x M-m") 'eshell-throwaway)
 
-(load-file "~/.emacs.d/martin/package-config/helm.el")
+;; Load all package and mode configs
+(mapcar 'load-file (split-string
+		    (shell-command-to-string
+		     "ls -rt -d -1 ~/.emacs.d/martin/package-config/*")))
 
-(load-file "~/.emacs.d/martin/package-config/smartparens.el")
+;; Load all helper functions
+(mapcar 'load-file (split-string
+		    (shell-command-to-string
+		     "ls -rt -d -1 ~/.emacs.d/martin/helper-functions/*")))
 
-;; remap C-a to `smarter-move-beginning-of-line'
-(load-file "~/.emacs.d/martin/helper-functions/smarter-move-beginning-of-line.el")
+;; Put backups and auto-save in /tmp
+(setq backup-directory-alist `((".*" . ,temporary-file-directory))
+      auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
 
+;; Delete trailing whitespace on save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
