@@ -1,5 +1,6 @@
 (use-package clojure-mode
   :ensure t
+  :ensure cider
   :mode (("\\.edn$" . clojure-mode)
 	 ("\\.boot$" . clojure-mode))
   :config (progn

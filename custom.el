@@ -15,6 +15,9 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 
+;; yes or no
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; mac settings
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize)
