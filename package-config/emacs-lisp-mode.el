@@ -10,3 +10,5 @@
 
 (add-hook 'emacs-lisp-mode-hook
 	  (lambda () (define-key emacs-lisp-mode-map (kbd "C-c C-k") 'save-file-and-eval-it-all)))
+
+(add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)

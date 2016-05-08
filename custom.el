@@ -11,6 +11,9 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
+;; spaces rock
+(setq indent-tabs-mode nil)
+
 ;; no shitty splash screen
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
@@ -54,3 +57,7 @@
 	      scroll-conservatively 0
 	      scroll-up-aggressively 0.01
 	      scroll-down-aggressively 0.01)
+
+
+;; Kill ring on M-y
+(global-set-key (kbd "M-y") #'helm-show-kill-ring)
