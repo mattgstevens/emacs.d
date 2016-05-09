@@ -12,4 +12,6 @@
 	    (global-set-key (kbd "C-x C-f") 'helm-find-files)
 	    (global-set-key (kbd "C-x b") 'helm-buffers-list)
 	    (require 'helm-projectile)
-	    (helm-projectile-on)))
+	    (helm-projectile-on)
+
+	    (setq helm-split-window-in-side-p t)))
