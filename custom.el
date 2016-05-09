@@ -24,7 +24,14 @@
 ;; mac settings
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize)
-  (tool-bar-mode -1))
+  (tool-bar-mode -1)
+
+  ;; Visible bell
+  (setq visible-bell nil) ;; The default
+  (setq ring-bell-function 'ignore)
+
+  ;; bara lite mindre
+  (scroll-bar-mode -1))
 
 ;; Autosave and backups go elsewhere
 (setq backup-directory-alist
@@ -61,3 +68,12 @@
 
 ;; Kill ring on M-y
 (global-set-key (kbd "M-y") #'helm-show-kill-ring)
+
+;; Regexp for search
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
+
+;; FInal newline
+(setq require-final-newline t)
