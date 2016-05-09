@@ -1,6 +1,7 @@
 ;; Eshell, I love you
-(defun eshell-throwaway () (interactive)
-       (martin-eshell (cdr (cdr (cdr (current-time))))))
+(defun eshell-throwaway ()
+  (interactive)
+  (eshell (cdr (cdr (cdr (current-time))))))
 
 (defun martin-eshell ()
   (interactive)
