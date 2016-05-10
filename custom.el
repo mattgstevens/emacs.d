@@ -12,7 +12,7 @@
 (package-initialize)
 
 ;; spaces rock
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 ;; no shitty splash screen
 (setq inhibit-splash-screen t)
@@ -80,7 +80,6 @@
 
 ;; Line numbers
 (global-linum-mode t)
-
 
 ;; EMOJI 👍
 (defun --set-emoji-font (frame)
