@@ -1,3 +1,8 @@
+(defun kill-cider-buffers ()
+  (interactive)
+  (kill-matching-buffers "cider")
+  (kill-matching-buffers "nrepl"))
+
 (use-package clojure-mode
   :ensure t
   :ensure cider
