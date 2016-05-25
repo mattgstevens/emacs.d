@@ -11,3 +11,15 @@
 
 (global-set-key (kbd "C-x m") #'martin-eshell)
 (global-set-key (kbd "C-x M-m") #'eshell-throwaway)
+
+(defun eshell/vim (filename &optional wildcards)
+  (if wildcards
+      (find-file filename wildcards)
+    (find-file filename)))
+
+(defun eshell/emacs (filename &optional wildcards)
+  (if wildcards
+      (find-file filename wildcards)
+    (find-file filename)))
+
+(add-hook 'eshell-mode-hook (lambda () (company-mode -1)))
