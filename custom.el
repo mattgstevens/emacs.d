@@ -95,3 +95,6 @@
 ;; Hook for when a frame is created with emacsclient
 ;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Frames.html
 (add-hook 'after-make-frame-functions '--set-emoji-font)
+
+;; Inserting when text is selected deletes selected text
+(delete-selection-mode 1)
