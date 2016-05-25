@@ -10,7 +10,10 @@
 		 (define-key company-active-map [backtab] 'company-select-previous)
 
 
+                 (global-set-key (kbd "C-;") 'company-complete)
                  (define-key company-active-map (kbd "C-;") 'company-complete-selection)
+                 (define-key company-active-map (kbd "<return>") 'newline)
+
                  ;;(define-key company-active-map [return] nil)
 
                  (add-to-list 'company-backends 'company-emoji)))
