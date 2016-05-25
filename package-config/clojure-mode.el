@@ -3,6 +3,10 @@
   (kill-matching-buffers "cider")
   (kill-matching-buffers "nrepl"))
 
+(defun cider-debugger-panic!!! ()
+  (interactive)
+  (cider-interactive-eval "(boot.core/load-data-readers!)"))
+
 (use-package clojure-mode
   :ensure t
   :ensure cider
