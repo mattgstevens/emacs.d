@@ -82,7 +82,7 @@
 (global-linum-mode t)
 
 ;; EMOJI 👍
-(defun --set-emoji-font (frame)
+(defun set-emoji-font (frame)
   "Adjust the font settings of FRAME so Emacs can display emoji properly."
   (if (eq system-type 'darwin)
       ;; For NS/Cocoa
@@ -91,10 +91,10 @@
     (set-fontset-font t 'symbol (font-spec :family "Symbola") frame 'prepend)))
 
 ;; For when Emacs is started in GUI mode:
-(--set-emoji-font nil)
+(set-emoji-font nil)
 ;; Hook for when a frame is created with emacsclient
 ;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Frames.html
-(add-hook 'after-make-frame-functions '--set-emoji-font)
+(add-hook 'after-make-frame-functions 'set-emoji-font)
 
 ;; Inserting when text is selected deletes selected text
 (delete-selection-mode 1)
