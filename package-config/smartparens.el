@@ -27,6 +27,11 @@
 	     ("M-<right>" . sp-forward-barf-sexp)
 	     ("C-<left>"  . sp-backward-slurp-sexp)
 	     ("M-<left>"  . sp-backward-barf-sexp)
+             ("C-(" .       (lambda ()
+                              (interactive)
+                              (insert "()")
+                              (backward-char)
+                              (sp-forward-slurp-sexp)))
 
 	     ("C-M-t" . sp-transpose-sexp)
 	     ("C-M-k" . sp-kill-sexp)
