@@ -10,8 +10,12 @@
 (use-package clojure-mode
   :ensure t
   :ensure cider
-  ;; :ensure yasnippets
+  :ensure smartparens
+  :ensure rainbow-delimiters
+  :ensure aggressive-indent
+  :ensure eldoc
   :ensure clojure-snippets
+
   :mode (("\\.edn$" . clojure-mode)
 	 ("\\.boot$" . clojure-mode))
   :config (progn
