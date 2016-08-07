@@ -1,5 +1,6 @@
 ;; Helm all the things
 (use-package helm
+  :ensure helm-projectile
   :config (progn
 	    (require 'helm-config)
 	    (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
