@@ -41,12 +41,12 @@
 ;; Load all package and mode configs
 (mapcar 'load-file (split-string
 		    (shell-command-to-string
-		     "ls -rt -d -1 ~/.emacs.d/martin/package-config/*")))
+		     "ls -rt -d -1 ~/.emacs.d/config/package-config/*")))
 
 ;; Load all helper functions
 (mapcar 'load-file (split-string
 		    (shell-command-to-string
-		     "ls -rt -d -1 ~/.emacs.d/martin/helper-functions/*")))
+		     "ls -rt -d -1 ~/.emacs.d/config/helper-functions/*")))
 
 ;; Put backups and auto-save in /tmp
 (setq backup-directory-alist `((".*" . ,temporary-file-directory))

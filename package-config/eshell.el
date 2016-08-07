@@ -3,13 +3,13 @@
   (interactive)
   (eshell (cdr (cdr (cdr (current-time))))))
 
-(defun martin-eshell ()
+(defun my-eshell ()
   (interactive)
   (if (projectile-project-p)
       (projectile-run-eshell)
     (eshell)))
 
-(global-set-key (kbd "C-x m") #'martin-eshell)
+(global-set-key (kbd "C-x m") #'my-eshell)
 (global-set-key (kbd "C-x M-m") #'eshell-throwaway)
 
 (defun eshell/vim (filename &optional wildcards)
