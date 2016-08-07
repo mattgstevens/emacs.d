@@ -23,7 +23,6 @@
 
 ;; mac settings
 (when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize)
   (tool-bar-mode -1)
 
   ;; Visible bell
