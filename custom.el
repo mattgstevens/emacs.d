@@ -103,3 +103,6 @@
 
 ;; Inserting when text is selected deletes selected text
 (delete-selection-mode 1)
+
+;; Show column number
+(column-number-mode)
