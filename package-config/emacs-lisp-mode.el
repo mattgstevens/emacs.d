@@ -1,8 +1,10 @@
 (use-package lisp-mode
   :ensure aggressive-indent
   :ensure smartparens
+  :ensure eros
   :config (progn (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
                  (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+                 (add-hook 'emacs-lisp-mode-hook (lambda () (eros-mode 1)))
 
                  (add-hook 'emacs-lisp-mode-hook
                            (lambda () (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)))
