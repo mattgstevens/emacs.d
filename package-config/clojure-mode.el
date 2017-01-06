@@ -16,8 +16,13 @@
   :ensure eldoc
   :ensure clojure-snippets
 
-  :mode (("\\.edn$" . clojure-mode)
-	 ("\\.boot$" . clojure-mode))
+  :mode "\\.edn$"
+  :mode "\\.boot$"
+  :mode "\\.clj$"
+  :mode "\\.cljs$"
+  :mode "\\.cljc$"
+  :mode "\\.cljx$"
+
   :config (progn
 	    (add-hook 'clojure-mode-hook #'smartparens-mode)
 	    (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)

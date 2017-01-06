@@ -1,5 +1,6 @@
 (use-package yaml-mode
   :ensure t
-  :mode (("\\.yml" . yaml-mode))
+  :mode "\\.yaml$"
+  :mode "\\.yml$"
   :config (progn
             (add-hook 'clojure-mode-hook #'smartparens-mode)))
