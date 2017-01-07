@@ -1,3 +1,6 @@
+(setq gc-cons-threshold 100000000)
+;; (emacs-init-time)
+
 ;;make script that quits emacs when errors are thrown
 ;; condition-case
 ;; instead, use error as the catch-all condition name.
