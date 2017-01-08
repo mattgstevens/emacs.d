@@ -23,10 +23,10 @@
   :mode "\\.cljc$"
   :mode "\\.cljx$"
 
-  :config (progn
-	    (add-hook 'clojure-mode-hook #'smartparens-mode)
-	    (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
-            (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
-            (add-hook 'clojure-mode-hook #'eldoc-mode)
+  :init (progn
+          (add-hook 'clojure-mode-hook #'smartparens-mode)
+          (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
+          (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+          (add-hook 'clojure-mode-hook #'eldoc-mode)
 
-            (add-hook 'clojure-mode-hook #'cider-auto-test-mode)))
+          (add-hook 'clojure-mode-hook #'cider-auto-test-mode)))
