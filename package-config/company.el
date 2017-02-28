@@ -10,5 +10,7 @@
 
                  (global-set-key (kbd "C-;") 'company-complete)
                  (define-key company-active-map (kbd "C-;") 'company-complete-selection)
-                 (define-key company-active-map (kbd "<return>") 'newline)))
+                 (define-key company-active-map (kbd "<return>") 'newline)
+                 (setq company-dabbrev-downcase nil)))
+
 (add-hook 'after-init-hook 'global-company-mode)
