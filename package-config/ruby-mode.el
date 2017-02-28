@@ -2,4 +2,7 @@
   :ensure t
   :mode "\\.rb\\'"
   :mode "Rakefile"
-  :mode "Gemfile")
+  :mode "Gemfile"
+  :ensure aggressive-indent
+  :config (progn
+            (add-hook 'ruby-mode-hook #'aggressive-indent-mode)))
