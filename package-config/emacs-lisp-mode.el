@@ -1,11 +1,13 @@
 (use-package emacs-lisp-mode
   :ensure aggressive-indent
   :ensure smartparens
+  :ensure rainbow-delimiters
   :ensure eros
   ;; :mode (rx ".el" eos) ;; I've found a bug in use-package - it should evaluate this first
   :mode "\\.el$"
   :init (progn (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
                (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+               (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
                (add-hook 'emacs-lisp-mode-hook (lambda () (eros-mode 1)))
                (add-hook 'emacs-lisp-mode-hook
                          (lambda () (define-key emacs-lisp-mode-map
