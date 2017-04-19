@@ -25,23 +25,21 @@
   :ensure smartparens
   :ensure flycheck
   :ensure flycheck-rust
-  :init (progn
-          (setq racer-rust-src-path "~/.emacs.d/rust/src")
-          (add-hook 'rust-mode-hook #'racer-mode)
-          (add-hook 'racer-mode-hook #'eldoc-mode)
-          (add-hook 'racer-mode-hook #'company-mode)
-          (setq company-tooltip-align-annotations t)
+  :config (progn
+            (setq racer-rust-src-path "~/.emacs.d/rust/src")
+            (add-hook 'rust-mode-hook #'racer-mode)
+            (add-hook 'racer-mode-hook #'eldoc-mode)
+            (add-hook 'racer-mode-hook #'company-mode)
+            (setq company-tooltip-align-annotations t)
 
-          (add-hook 'rust-mode-hook #'rainbow-delimiters-mode)
+            (add-hook 'rust-mode-hook #'rainbow-delimiters-mode)
 
-          (add-hook 'rust-mode-hook #'cargo-minor-mode)
+            (add-hook 'rust-mode-hook #'cargo-minor-mode)
 
-          (add-hook 'rust-mode-hook #'aggressive-indent-mode)
-          (add-hook 'rust-mode-hook #'smartparens-mode)
+            (add-hook 'rust-mode-hook #'aggressive-indent-mode)
+            (add-hook 'rust-mode-hook #'smartparens-mode)
 
-          (rust-enable-format-on-save)
+            (rust-enable-format-on-save)
 
-          (add-hook 'rust-mode-hook #'flycheck-mode)
-          (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)))
-
-
+            (add-hook 'rust-mode-hook #'flycheck-mode)
+            (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)))
