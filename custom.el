@@ -85,9 +85,6 @@
 ;; FInal newline
 (setq require-final-newline t)
 
-;; Line numbers
-(global-linum-mode t)
-
 ;; EMOJI 👍
 (defun set-emoji-font (frame)
   "Adjust the font settings of FRAME so Emacs can display emoji properly."
