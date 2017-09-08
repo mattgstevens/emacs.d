@@ -106,3 +106,11 @@
 
 ;; Show column number
 (column-number-mode)
+
+;; Always keep windows balanced
+(defadvice split-window-below (after restore-balanace-below activate)
+  (balance-windows))
+(defadvice split-window-right (after restore-balance-right activate)
+  (balance-windows))
+(defadvice delete-window (after restore-balance activate)
+  (balance-windows))
