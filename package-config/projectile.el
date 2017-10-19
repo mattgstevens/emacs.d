@@ -2,4 +2,4 @@
   :ensure t
   :config (progn
             (projectile-global-mode)
-            (global-set-key (kbd "M-p") #'helm-projectile-find-file)))
+            (global-set-key (kbd "s-p") #'helm-projectile-find-file)))
