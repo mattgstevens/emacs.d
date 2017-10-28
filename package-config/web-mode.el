@@ -3,6 +3,7 @@
   :ensure smartparens
   :ensure rainbow-delimiters
   :ensure aggressive-indent
+  :ensure prettier-js
 
   :mode "\\.html?\\'"
   :mode "\\html.erb\\'"
@@ -18,4 +19,7 @@
 
           (add-hook 'web-mode-hook #'aggressive-indent-mode)
           (add-hook 'web-mode-hook #'rainbow-delimiters-mode)
-          (add-hook 'web-mode-hook #'smartparens-mode)))
+          (add-hook 'web-mode-hook #'smartparens-mode)
+
+          (setq prettier-js-args '("--no-semi"))
+          (add-hook 'web-mode-hook 'prettier-js-mode)))
